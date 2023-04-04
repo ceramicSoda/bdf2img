@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'Pixelated';
+  src: url('minimal5x7.woff') format('woff');
+}
+*{
+  font-smooth: never;
+  -webkit-font-smoothing : none;
+  font-family: "Pixelated", monospace;
+  font-size: 48px;
+  letter-spacing: 4px;
+  line-height: 48px;
+}
+body,html{
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+body{
+  background-color: black;
+  color: #fbf7e8;
+}
+
+input[type="file"] {
+  color: transparent;
+}
+input[type="file"]::-webkit-file-upload-button {
+  visibility: hidden;
+}
+input[type="file"]::before {
+  content: 'Select your BDF font!';
+  color: grey;
+  display: inline-block;
+  border: 4px solid;
+  border-color: black;
+  outline: none;
+  padding: 16px 16px 8px;
+  -webkit-user-select: none;
+  cursor: pointer;
+  transition: border-color .2s ease-in-out, color .2s ease-in-out;
+}
+input[type="file"]:hover::before {
+  border-color: white;
+  color: white;
+}
+input[type="file"]:active {
+  outline: 0;
+}
+input[type="file"]:active::before {
+  background-color: grey;
+  color: black;
+}
+
+.cont{
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+}
