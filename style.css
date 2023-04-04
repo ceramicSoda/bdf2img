@@ -1,27 +1,29 @@
 @font-face {
-  font-family: 'Pixelated';
-  src: url('minimal5x7.woff') format('woff');
+  font-family: 'dogica';
+  src: url('./monogram.woff2') format('woff2');
+  src: url('./monogram.otf') format('opentype');
 }
 :root {
-  --cl_blk: #000;
-  --cl_wht: #fff;
-  --cl_gry: #777;
-  --cl_pur: #a776c1;
-  --cl_red: #d8828e;
-  --cl_org: #e8b382;
-  --cl_yel: #ffff8f;
-  --cl_grn: #7be098;
-  --cl_blu: #849ad8; 
+  --cl_blk:     #08020e;
+  --cl_wht:     #fff;
+  --cl_gry:     #333;
+  --cl_pur:     #a776c1;
+  --cl_red:     #d8828e;
+  --cl_org:     #e8b382;
+  --cl_yel:     #ffff8f;
+  --cl_grn:     #7be098;
+  --cl_blu:     #849ad8; 
+  --pxl:        4px;
 }
 
 @keyframes rainbow {
-  0.00% { border-color: var(--cl_yel); color: var(--cl_yel); }
- 16.67% { border-color: var(--cl_org); color: var(--cl_org); }
- 33.33% { border-color: var(--cl_red); color: var(--cl_red); }
- 50.00% { border-color: var(--cl_pur); color: var(--cl_pur); }
- 66.67% { border-color: var(--cl_blu); color: var(--cl_blu); }
- 83.33% { border-color: var(--cl_grn); color: var(--cl_grn); }
-100.00% { border-color: var(--cl_yel); color: var(--cl_yel); }
+  0.00% { color: var(--cl_yel); }
+ 16.67% { color: var(--cl_org); }
+ 33.33% { color: var(--cl_red); }
+ 50.00% { color: var(--cl_pur); }
+ 66.67% { color: var(--cl_blu); }
+ 83.33% { color: var(--cl_grn); }
+100.00% { color: var(--cl_yel); }
 }
 
 @keyframes rainbowBack {
@@ -37,53 +39,81 @@
 *{
   font-smooth: never;
   -webkit-font-smoothing : none;
-  font-family: "Pixelated", monospace;
-  font-size: 24px;
-  letter-spacing: 4px;
-  line-height: 24px;
+  font-family: "dogica", monospace;
+  line-height: calc(var(--pxl)*6);
+  image-rendering: pixelated;
+  font-size: calc(var(--pxl)*8);
+}
+p,body,html,pre{
+  margin: 0;
+  padding: 0;
 }
 body,html{
-  padding: 0;
-  margin: 0;
   height: 100%;
   width: 100%;
   overflow: hidden;
 }
 body{
-  background-color: black;
+  background-color: var(--cl_blk);
   color: var(--cl_wht);
+  background-image: url('data:image/png;base64,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');
+}
+button{
+  border: none;
+  outline: none;
 }
 input[type="file"] {
-  color: transparent;
+  display: none;
 }
-input[type="file"]::-webkit-file-upload-button {
-  visibility: hidden;
-}
-input[type="file"]::before {
-  content: 'Select your BDF font!';
-  color: grey;
+.btn {
+  animation: rainbow 8s infinite;
   display: inline-block;
-  border: 2px solid;
-  border-color: var(--cl_blk);
   outline: none;
-  padding: 16px 16px 8px;
-  -webkit-user-select: none;
   cursor: pointer;
+  padding: calc(var(--pxl)*2);
+  margin-bottom: calc(var(--pxl)*4);
+  background-color: var(--cl_blk);
 }
-input[type="file"]:hover::before {
-  animation: rainbow 3s infinite;
-  color: white;
+.btn::after{content: " >";}
+.btn::before{content: "< ";}
+.btn:hover::after{content: " <";}
+.btn:hover::before{content: "> ";}
+.btn:hover{background-color: var(--cl_gry);}
+.title{
+  margin: 0 auto;
+  text-align: center;
+  white-space: pre;
+  animation: rainbow 8s infinite;
 }
-input[type="file"]:active {
-  outline: 0;
-}
-input[type="file"]:active::before {
-  background-color: grey;
-  color: black;
-}
-
 .cont{
   max-width: 1080px;
   width: 100%;
   margin: 0 auto;
+}
+.bord_cont{
+  background-color: var(--cl_blk);
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+.main{
+  display: flex;
+}
+.column{
+  max-width: var(--pxl);
+  word-wrap: break-word;
+  animation: rainbow 8s infinite;
+  animation-delay: -1s;
+}
+.main_left, .main_right{
+  padding: 0 calc(var(--pxl)*8);
+}
+.main_right{
+  display: flex;
+  justify-content: center;
+}
+#outImage{
+  height: 512px;
+  width: 512px;
 }

@@ -7,9 +7,32 @@
     <title>Vite App</title>
   </head>
   <body>
-    <div class="cont">
-      <input type="file" id="inputFontFile">
-      <script type="module" src="/main.js"></script>
+    <div class="bord_cont">
+      <p class="column">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</p>
+      <div class="cont">
+        <p class="title">
+
+.#####...#####...######...####...######..##...##...####..
+.##..##..##..##..##......#...##....##....###.###..##.....
+.#####...##..##..####.....####.....##....##.#.##..##.###.
+.##..##..##..##..##......##........##....##...##..##..##.
+.#####...#####...##......######..######..##...##...####..
+.........................................................
+
+        </p>
+        <div class="main">
+          <div class="main_left">
+            <input type="file" id="uploadFont">
+            <label class="btn" for="uploadFont">Select your BDF font!</label>
+            <script type="module" src="/main.js"></script>
+          </div>
+          <p class="column">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</p>
+          <div class="main_right">
+            <canvas id="outImage"></canvas>
+          </div>
+        </div>
+      </div>
+      <p class="column">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</p>
     </div>
   </body>
 </html>
