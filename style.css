@@ -2,13 +2,45 @@
   font-family: 'Pixelated';
   src: url('minimal5x7.woff') format('woff');
 }
+:root {
+  --cl_blk: #000;
+  --cl_wht: #fff;
+  --cl_gry: #777;
+  --cl_pur: #a776c1;
+  --cl_red: #d8828e;
+  --cl_org: #e8b382;
+  --cl_yel: #ffff8f;
+  --cl_grn: #7be098;
+  --cl_blu: #849ad8; 
+}
+
+@keyframes rainbow {
+  0.00% { border-color: var(--cl_yel); color: var(--cl_yel); }
+ 16.67% { border-color: var(--cl_org); color: var(--cl_org); }
+ 33.33% { border-color: var(--cl_red); color: var(--cl_red); }
+ 50.00% { border-color: var(--cl_pur); color: var(--cl_pur); }
+ 66.67% { border-color: var(--cl_blu); color: var(--cl_blu); }
+ 83.33% { border-color: var(--cl_grn); color: var(--cl_grn); }
+100.00% { border-color: var(--cl_yel); color: var(--cl_yel); }
+}
+
+@keyframes rainbowBack {
+  0.00% { background-color: var(--cl_yel);}
+ 16.67% { background-color: var(--cl_org);}
+ 33.33% { background-color: var(--cl_red);}
+ 50.00% { background-color: var(--cl_pur);}
+ 66.67% { background-color: var(--cl_blu);}
+ 83.33% { background-color: var(--cl_grn);}
+100.00% { background-color: var(--cl_yel);}
+}
+
 *{
   font-smooth: never;
   -webkit-font-smoothing : none;
   font-family: "Pixelated", monospace;
-  font-size: 48px;
+  font-size: 24px;
   letter-spacing: 4px;
-  line-height: 48px;
+  line-height: 24px;
 }
 body,html{
   padding: 0;
@@ -19,9 +51,8 @@ body,html{
 }
 body{
   background-color: black;
-  color: #fbf7e8;
+  color: var(--cl_wht);
 }
-
 input[type="file"] {
   color: transparent;
 }
@@ -32,16 +63,15 @@ input[type="file"]::before {
   content: 'Select your BDF font!';
   color: grey;
   display: inline-block;
-  border: 4px solid;
-  border-color: black;
+  border: 2px solid;
+  border-color: var(--cl_blk);
   outline: none;
   padding: 16px 16px 8px;
   -webkit-user-select: none;
   cursor: pointer;
-  transition: border-color .2s ease-in-out, color .2s ease-in-out;
 }
 input[type="file"]:hover::before {
-  border-color: white;
+  animation: rainbow 3s infinite;
   color: white;
 }
 input[type="file"]:active {
